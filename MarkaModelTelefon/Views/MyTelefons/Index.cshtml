@@ -1,0 +1,72 @@
+﻿@model IEnumerable<MarkaModelTelefon.Models.MyTelefon>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row pt-2 pb-2">
+    <div class="col-sm-9">
+        <h4 class="page-title">
+            @*Başlık*@ Telefon işlemleri
+        </h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">
+                @*Detay*@ Telefon işlemlerinizi bu alandan yönetebilirsiniz.
+            </li>
+        </ol>
+    </div>
+    <div class="col-sm-3">
+        <div class="btn-group float-sm-right btn btn-light">
+            @Html.ActionLink("Yeni Ekle", "Create")
+        </div>
+    </div>
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MyModel.ModelAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Renk.RenkAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GarantiDurumu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adet)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MyModel.ModelAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Renk.RenkAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GarantiDurumu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adet)
+        </td>
+        <td>
+            <button class="btn btn-warning btn-sm">
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.TelefonId })
+            </button>
+            <button class="btn btn-info btn-sm">
+                @Html.ActionLink("Detaylar", "Details", new { id = item.TelefonId })
+            </button>
+            <button class="btn btn-danger btn-sm">
+                @Html.ActionLink("Sil", "Delete", new { id = item.TelefonId })
+            </button>
+        </td>
+    </tr>
+}
+
+</table>

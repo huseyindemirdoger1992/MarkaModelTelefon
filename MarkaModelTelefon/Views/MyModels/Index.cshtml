@@ -1,0 +1,65 @@
+﻿@model IEnumerable<MarkaModelTelefon.Models.MyModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row pt-2 pb-2">
+    <div class="col-sm-9">
+        <h4 class="page-title">
+            @*Başlık*@ Model işlemleri
+        </h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">
+                @*Detay*@ Modellerinizi bu alandan yönetebilirsiniz.
+            </li>
+        </ol>
+    </div>
+    <div class="col-sm-3">
+        <div class="btn-group float-sm-right btn btn-light">
+            @Html.ActionLink("Yeni Ekle", "Create")
+        </div>
+    </div>
+</div>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MyMarka.MarkaAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModelAd)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MyMarka.MarkaAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModelAd)
+        </td>
+        <td>
+            <button class="btn btn-warning btn-sm">
+
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.ModelId })
+            </button>
+            <button class="btn btn-info btn-sm">
+
+                @Html.ActionLink("Detaylar", "Details", new { id = item.ModelId })
+            </button>
+            <button class="btn btn-danger btn-sm">
+
+                @Html.ActionLink("Sil", "Delete", new { id = item.ModelId })
+            </button>
+
+        </td>
+    </tr>
+}
+
+</table>

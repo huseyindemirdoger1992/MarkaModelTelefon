@@ -1,0 +1,41 @@
+﻿@model MarkaModelTelefon.Models.MyMarka
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row pt-2 pb-2">
+    <div class="col-sm-9">
+        <h4 class="page-title">
+            @*Başlık*@ Detay Sayfası
+        </h4>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">
+                @*Detay*@ Bu sayfadan seçim ile alakalı tüm detayları görebilirsiniz.
+            </li>
+        </ol>
+    </div>
+    <div class="col-sm-3">
+        <div class="float-sm-right btn btn-light shadow-info">
+            <i class="fa fa-arrow-circle-left"></i> @Html.ActionLink("Listeye Dön", "Index")
+        </div>
+    </div>
+</div>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MarkaAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarkaAd)
+        </dd>
+
+    </dl>
+</div>
+<button class="btn btn-warning shadow-warning">
+    <i class="fa fa-edit"></i> @Html.ActionLink("Düzenlemeye Git", "Edit", new { id = Model.MarkaId })
+</button>

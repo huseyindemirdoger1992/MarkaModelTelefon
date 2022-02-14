@@ -1,0 +1,37 @@
+﻿@model MarkaModelTelefon.Models.MyModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detaylar</h2>
+
+<div>
+    <h4>Model</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MyMarka.MarkaAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MyMarka.MarkaAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelAd)
+        </dd>
+
+    </dl>
+</div>
+<div class="btn-group float-sm-left btn btn-warning">
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.ModelId })
+</div>
+<div class="btn-group float-sm-right btn btn-primary">
+    @Html.ActionLink("Listeye Dön", "Index")
+</div>

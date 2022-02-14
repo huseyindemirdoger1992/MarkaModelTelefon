@@ -1,0 +1,91 @@
+﻿@model MarkaModelTelefon.Models.MyTelefon
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Silinecek</h2>
+
+<h3>Bu içerik kalıcı olarak silinecek.</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MyModel.ModelAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MyModel.ModelAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Renk.RenkAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Renk.RenkAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonGRM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonGRM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonMA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonMA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonOnKameraPX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonOnKameraPX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonOnArkaKameraPX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonOnArkaKameraPX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GarantiDurumu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GarantiDurumu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adet)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Kalıcı Olarak Sil" class="btn btn-danger" />
+        </div>
+        <div class="btn-group float-sm-right btn btn-primary">
+            @Html.ActionLink("Listeye Dön", "Index")
+        </div>
+    }
+</div>

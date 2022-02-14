@@ -1,0 +1,86 @@
+﻿@model MarkaModelTelefon.Models.MyTelefon
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detaylar</h2>
+
+<div>
+    <h4>Telefon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MyModel.ModelAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MyModel.ModelAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Renk.RenkAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Renk.RenkAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonGRM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonGRM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonMA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonMA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonOnKameraPX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonOnKameraPX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonOnArkaKameraPX)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonOnArkaKameraPX)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GarantiDurumu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GarantiDurumu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adet)
+        </dd>
+
+    </dl>
+</div>
+
+<div class="btn-group float-sm-left btn btn-warning">
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.TelefonId })
+</div>
+<div class="btn-group float-sm-right btn btn-primary">
+    @Html.ActionLink("Listeye Dön", "Index")
+</div>

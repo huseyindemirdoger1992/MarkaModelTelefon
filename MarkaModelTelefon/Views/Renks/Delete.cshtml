@@ -1,0 +1,35 @@
+﻿@model MarkaModelTelefon.Models.Renk
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Silinecek</h2>
+
+<h3>Bu içerik kalıcı olarak silinecek.</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RenkAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RenkAd)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Kalıcı Olarak Sil" class="btn btn-danger" />
+        </div>
+        <div class="btn-group float-sm-right btn btn-primary">
+            @Html.ActionLink("Listeye Dön", "Index")
+        </div>
+    }
+</div>
